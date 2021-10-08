@@ -198,7 +198,9 @@ function draw() {
   if(result != null)
     {
       noLoop();
-      createP(result).style('color', '#FFF').style('font-size', '32pt');
-      console.log(result);
+      let resultMessage = createP('');
+      resultMessage.style('font-size', '32pt');
+      //console.log(result);
+      result == 'tie' ? resultMessage.html('Tie!') : resultMessage.html(`${result} wins!`);
     }
 }
