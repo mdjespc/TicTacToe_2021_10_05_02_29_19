@@ -169,7 +169,6 @@ function draw() {
   //Take a turn
   //nextTurn();
   minimaxTurn(board, available, 0, true);
-  
   //Visually update board by printing
   for(let i = 0; i < 3; i++)
     {

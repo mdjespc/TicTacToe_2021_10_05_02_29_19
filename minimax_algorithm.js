@@ -25,7 +25,7 @@ function minimaxTurn(currentBoard, currentAvailable, depth, isMaximizing)
     if(currentPlayer == human_player) return;   
     //This will hold the coordinates to the maximizing play
     let bestMoveFound = null;
-    let bestScoreFound = null;
+    let bestScoreFound = isMaximizing ? -Infinity : Infinity;
     let potentialWinner = checkWinner(false);
     /*
     Terminal case -- the algorithm has recursed to the max depth,
@@ -35,7 +35,6 @@ function minimaxTurn(currentBoard, currentAvailable, depth, isMaximizing)
     //Maximizing player's turn
     if(isMaximizing)
     {
-        bestScoreFound = -Infinity;
         currentAvailable.forEach(element =>{
             let copy = currentAvailable.slice(0, currentAvailable.length - 1);
             let y = element[0];
@@ -59,7 +58,6 @@ function minimaxTurn(currentBoard, currentAvailable, depth, isMaximizing)
     //Minimizing player's turn
     else
     {
-        bestScoreFound = Infinity;
         currentAvailable.forEach(element =>{
             let copy = currentAvailable.slice(0, currentAvailable.length - 1);
             let y = element[0];
